@@ -7,6 +7,7 @@ class ShoeImageSlide extends StatefulWidget {
   State<ShoeImageSlide> createState() => _ShoeImageSlideState();
 }
 
+final List<String> shoeDetaiils = ['Men\'s Nike Shoe\n\$44.52','Addidas Shoes\n\$20.12','Woodland Walkers\n\$30.52','Bata Men\'s wear\n\$44.52'];
 class _ShoeImageSlideState extends State<ShoeImageSlide> {
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class _ShoeImageSlideState extends State<ShoeImageSlide> {
                 elevation: 5,
                 child: Stack(
                   children: [
-                    Positioned(top: 20,left: 30,child: Text('Hello\n\$33.3')),
+                    Positioned(top: 20,left: 30,child: Text(shoeDetaiils[index],style: TextStyle(fontWeight: FontWeight.bold,fontSize: 18),)),
                     Align(
                       alignment: Alignment.bottomCenter,
                       child: Image.asset(
