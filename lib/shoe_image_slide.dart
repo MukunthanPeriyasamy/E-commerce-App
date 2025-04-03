@@ -17,7 +17,7 @@ class _ShoeImageSlideState extends State<ShoeImageSlide> {
           return InkWell(
             onTap: () {},
             child: Container(
-              height: 300,
+              height: 350,
               width: double.infinity,
               padding: EdgeInsets.all(20),
               child: Card(
@@ -25,9 +25,17 @@ class _ShoeImageSlideState extends State<ShoeImageSlide> {
                   borderRadius: BorderRadius.circular(40),
                 ),
                 elevation: 5,
-                child: Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Image.asset('assets/images/shoes_${index+1}.png'),
+                child: Stack(
+                  children: [
+                    Positioned(top: 20,left: 30,child: Text('Hello\n\$33.3')),
+                    Align(
+                      alignment: Alignment.bottomCenter,
+                      child: Image.asset(
+                        'assets/images/shoes_${index + 1}.png',
+                        height: 200,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),

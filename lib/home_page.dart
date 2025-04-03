@@ -35,8 +35,6 @@ class _HomePageState extends State<HomePage> {
                       barTextStyle: WidgetStatePropertyAll(
                         TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                       ),
-                      // viewElevation: 0,
-                      // barOverlayColor: WidgetStatePropertyAll(Colors.black),
                       searchController: _controller,
                       suggestionsBuilder: (context, searchText) {
                         return suggestions.map((value) {

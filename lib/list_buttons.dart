@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class ListButtons extends StatefulWidget {
   const ListButtons({super.key});
@@ -34,12 +33,15 @@ class _ListButtonsState extends State<ListButtons> {
             padding: const EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadiusDirectional.circular(20)
+                borderRadius: BorderRadiusDirectional.circular(20),
               ),
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(elevation: 1),
-                child: Text(buttons[index],style: TextStyle(overflow: TextOverflow.ellipsis),),
+                child: Text(
+                  buttons[index],
+                  style: TextStyle(overflow: TextOverflow.ellipsis),
+                ),
               ),
             ),
           );
