@@ -12,7 +12,15 @@ class HomePage extends StatefulWidget {
 SearchController _controller = SearchController();
 
 class _HomePageState extends State<HomePage> {
-  List<String> suggestions = ['Addidas', 'Nike', 'Bata', 'Walkaro','WoodLand','Sketchers','Jordan'];
+  List<String> suggestions = [
+    'Addidas',
+    'Nike',
+    'Bata',
+    'Walkaro',
+    'WoodLand',
+    'Sketchers',
+    'Jordan',
+  ];
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -56,9 +64,9 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-            SizedBox(height: 20,),
+            SizedBox(height: 20),
             ListButtons(),
-            SizedBox(height: 15,),
+            SizedBox(height: 15),
             ShoeImageSlide(),
           ],
         ),

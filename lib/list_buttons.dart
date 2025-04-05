@@ -35,12 +35,15 @@ class _ListButtonsState extends State<ListButtons> {
               decoration: BoxDecoration(
                 borderRadius: BorderRadiusDirectional.circular(20),
               ),
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(elevation: 1),
-                child: Text(
+              child: Chip(
+                side: BorderSide(color: Colors.black),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                labelPadding: EdgeInsets.symmetric(horizontal: 20),
+                label: Text(
                   buttons[index],
-                  style: TextStyle(overflow: TextOverflow.ellipsis),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
               ),
             ),

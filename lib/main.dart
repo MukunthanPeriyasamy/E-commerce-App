@@ -13,8 +13,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       darkTheme: ThemeData(colorScheme: ColorScheme.light()),
       home: HomePage(),
-  
-      theme: ThemeData(fontFamily: 'Lato'),
+
+      theme: ThemeData(
+        fontFamily: 'Lato',
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.amber),
+      ),
 
       debugShowCheckedModeBanner: false,
     );
