@@ -7,6 +7,8 @@ class ListButtons extends StatefulWidget {
   State<ListButtons> createState() => _ListButtonsState();
 }
 
+late String selectedFilter;
+
 List<String> buttons = [
   'All',
   'Addidas',
@@ -22,6 +24,12 @@ List<String> buttons = [
 
 class _ListButtonsState extends State<ListButtons> {
   @override
+  void initState() {
+    super.initState();
+    selectedFilter = buttons[0];
+  }
+
+  @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 60,
@@ -29,20 +37,25 @@ class _ListButtonsState extends State<ListButtons> {
         scrollDirection: Axis.horizontal,
         itemCount: buttons.length,
         itemBuilder: (context, index) {
+          final filter = buttons[index];
           return Padding(
             padding: const EdgeInsets.all(8.0),
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadiusDirectional.circular(20),
               ),
-              child: Chip(
-                side: BorderSide(color: Colors.black),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor:
+                      selectedFilter == filter ? Colors.amber : Colors.white,
                 ),
-                labelPadding: EdgeInsets.symmetric(horizontal: 20),
-                label: Text(
-                  buttons[index],
+                onPressed: () {
+                  setState(() {
+                    selectedFilter = filter;
+                  });
+                },
+                child: Text(
+                  filter,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
               ),

@@ -21,6 +21,15 @@ class _HomePageState extends State<HomePage> {
     'Sketchers',
     'Jordan',
   ];
+
+
+int _currentIndex = 0;
+
+ void _currentIndexChange(int index){
+  setState(() {
+    _currentIndex = index;
+  });
+ }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -68,6 +77,16 @@ class _HomePageState extends State<HomePage> {
             ListButtons(),
             SizedBox(height: 15),
             ShoeImageSlide(),
+            BottomNavigationBar(
+            selectedFontSize: 16,
+            unselectedFontSize: 16,
+            elevation: 0,
+            currentIndex: _currentIndex,
+            onTap: _currentIndexChange,
+            items: [
+              BottomNavigationBarItem(icon: Icon(Icons.home),label: 'Home'),
+              BottomNavigationBarItem(icon: Icon(Icons.person),label: 'Person')
+            ])
           ],
         ),
       ),

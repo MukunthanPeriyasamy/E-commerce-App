@@ -33,6 +33,7 @@ class _ShoeImageSlideState extends State<ShoeImageSlide> {
               elevation: 5,
               child: InkWell(
                 borderRadius: BorderRadius.circular(40),
+                onTap: (){},
                 child: Stack(
                   children: [
                     Positioned(
