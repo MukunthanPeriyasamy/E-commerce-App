@@ -10,24 +10,16 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-
-
 class _HomePageState extends State<HomePage> {
- 
-
   int _currentIndex = 0;
 
-  final List<Widget> screens = [
-    HomeScreenContent(), 
-    CartPage(),          
-    ProfilePage(),       
-  ];
+  final List<Widget> screens = [HomeScreenContent(), CartPage(), ProfilePage()];
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: screens[_currentIndex], 
+        body: screens[_currentIndex],
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: _currentIndex,
           onTap: (index) {
@@ -51,7 +43,6 @@ class _HomePageState extends State<HomePage> {
                 child: Icon(Icons.shopping_bag),
               ),
               label: 'Cart',
-              
             ),
             BottomNavigationBarItem(
               icon: Padding(
@@ -66,5 +57,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
-   
